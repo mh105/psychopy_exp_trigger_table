@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.2a1),
-    on Fri Jun 27 16:20:53 2025
+    on Fri Jun 27 16:36:31 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -157,7 +157,7 @@ or run the experiment with `--pilot` as an argument. To change what pilot
 PILOTING = core.setPilotModeFromArgs()
 # start off with values from experiment settings
 _fullScr = True
-_winSize = [1800, 1169]
+_winSize = [1920, 1080]
 # if in pilot mode, apply overrides according to preferences
 if PILOTING:
     # force windowed mode
@@ -488,15 +488,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     assert dev.is_pulse_table_running(), "Pulse table is not running successfully."
     
     
-    # --- Initialize components for Routine "__end__" ---
-    text_disconnect_ready = visual.TextStim(win=win, name='text_disconnect_ready',
-        text='Triggers are now sending. Ready to disconnect.',
-        font='Arial',
-        units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
-        color='white', colorSpace='rgb', opacity=None, 
-        languageStyle='LTR',
-        depth=0.0);
-    
     # create some handy timers
     
     # global clock to track the time since experiment started
@@ -638,121 +629,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         routineTimer.reset()
     else:
         routineTimer.addTime(-2.000000)
-    thisExp.nextEntry()
-    
-    # --- Prepare to start Routine "__end__" ---
-    # create an object to store info about Routine __end__
-    __end__ = data.Routine(
-        name='__end__',
-        components=[text_disconnect_ready],
-    )
-    __end__.status = NOT_STARTED
-    continueRoutine = True
-    # update component parameters for each repeat
-    # store start times for __end__
-    __end__.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
-    __end__.tStart = globalClock.getTime(format='float')
-    __end__.status = STARTED
-    __end__.maxDuration = None
-    # keep track of which components have finished
-    __end__Components = __end__.components
-    for thisComponent in __end__.components:
-        thisComponent.tStart = None
-        thisComponent.tStop = None
-        thisComponent.tStartRefresh = None
-        thisComponent.tStopRefresh = None
-        if hasattr(thisComponent, 'status'):
-            thisComponent.status = NOT_STARTED
-    # reset timers
-    t = 0
-    _timeToFirstFrame = win.getFutureFlipTime(clock="now")
-    frameN = -1
-    
-    # --- Run Routine "__end__" ---
-    __end__.forceEnded = routineForceEnded = not continueRoutine
-    while continueRoutine and routineTimer.getTime() < 3.0:
-        # get current time
-        t = routineTimer.getTime()
-        tThisFlip = win.getFutureFlipTime(clock=routineTimer)
-        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-        # update/draw components on each frame
-        
-        # *text_disconnect_ready* updates
-        
-        # if text_disconnect_ready is starting this frame...
-        if text_disconnect_ready.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-            # keep track of start time/frame for later
-            text_disconnect_ready.frameNStart = frameN  # exact frame index
-            text_disconnect_ready.tStart = t  # local t and not account for scr refresh
-            text_disconnect_ready.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(text_disconnect_ready, 'tStartRefresh')  # time at next scr refresh
-            # update status
-            text_disconnect_ready.status = STARTED
-            text_disconnect_ready.setAutoDraw(True)
-        
-        # if text_disconnect_ready is active this frame...
-        if text_disconnect_ready.status == STARTED:
-            # update params
-            pass
-        
-        # if text_disconnect_ready is stopping this frame...
-        if text_disconnect_ready.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > text_disconnect_ready.tStartRefresh + 3.0-frameTolerance:
-                # keep track of stop time/frame for later
-                text_disconnect_ready.tStop = t  # not accounting for scr refresh
-                text_disconnect_ready.tStopRefresh = tThisFlipGlobal  # on global time
-                text_disconnect_ready.frameNStop = frameN  # exact frame index
-                # update status
-                text_disconnect_ready.status = FINISHED
-                text_disconnect_ready.setAutoDraw(False)
-        
-        # check for quit (typically the Esc key)
-        if defaultKeyboard.getKeys(keyList=["escape"]):
-            thisExp.status = FINISHED
-        if thisExp.status == FINISHED or endExpNow:
-            endExperiment(thisExp, win=win)
-            return
-        # pause experiment here if requested
-        if thisExp.status == PAUSED:
-            pauseExperiment(
-                thisExp=thisExp, 
-                win=win, 
-                timers=[routineTimer], 
-                playbackComponents=[]
-            )
-            # skip the frame we paused on
-            continue
-        
-        # check if all components have finished
-        if not continueRoutine:  # a component has requested a forced-end of Routine
-            __end__.forceEnded = routineForceEnded = True
-            break
-        continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in __end__.components:
-            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                continueRoutine = True
-                break  # at least one component has not yet finished
-        
-        # refresh the screen
-        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-            win.flip()
-    
-    # --- Ending Routine "__end__" ---
-    for thisComponent in __end__.components:
-        if hasattr(thisComponent, "setAutoDraw"):
-            thisComponent.setAutoDraw(False)
-    # store stop times for __end__
-    __end__.tStop = globalClock.getTime(format='float')
-    __end__.tStopRefresh = tThisFlipGlobal
-    # using non-slip timing so subtract the expected duration of this Routine (unless ended on request)
-    if __end__.maxDurationReached:
-        routineTimer.addTime(-__end__.maxDuration)
-    elif __end__.forceEnded:
-        routineTimer.reset()
-    else:
-        routineTimer.addTime(-3.000000)
     thisExp.nextEntry()
     # Run 'End Experiment' code from start_trigger_table
     # Stop EEG recording
