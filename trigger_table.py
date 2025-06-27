@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.2a1),
-    on Thu Jun 19 20:43:55 2025
+    on Fri Jun 27 16:20:53 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -96,7 +96,7 @@ def generate_random_pulse_times(num_pulses=90, mean_interval_sec=60, rng=np.rand
     )
     intervals_ms = intervals * 100  # convert to milliseconds
 
-    return np.cumsum(intervals_ms).astype(int).tolist()
+    return np.cumsum(intervals_ms).astype(int)
 
 
 devices = get_xid_devices()
@@ -157,7 +157,7 @@ or run the experiment with `--pilot` as an argument. To change what pilot
 PILOTING = core.setPilotModeFromArgs()
 # start off with values from experiment settings
 _fullScr = True
-_winSize = [1920, 1080]
+_winSize = [1800, 1169]
 # if in pilot mode, apply overrides according to preferences
 if PILOTING:
     # force windowed mode
@@ -213,7 +213,7 @@ def setupData(expInfo, dataDir=None):
     # data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
     if dataDir is None:
         dataDir = _thisDir
-    filename = u'data/%s/%s_%s_%s' % (expInfo['participant'], expInfo['participant'], expName, expInfo['session'])
+    filename = u'data/%s/%s_%s' % (expInfo['participant'], expInfo['participant'], expName)
     # make sure filename is relative to dataDir
     if os.path.isabs(filename):
         dataDir = os.path.commonprefix([dataDir, filename])
