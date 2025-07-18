@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.2a1),
-    on Fri Jun 27 16:36:31 2025
+    on Thu Jul 17 22:50:36 2025
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -630,10 +630,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     else:
         routineTimer.addTime(-2.000000)
     thisExp.nextEntry()
-    # Run 'End Experiment' code from start_trigger_table
-    # Stop EEG recording
-    dev.activate_line(bitmask=127)  # trigger 127 will stop EEG
-    
     
     # mark experiment as finished
     endExperiment(thisExp, win=win)
